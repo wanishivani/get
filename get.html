@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+input{
+    padding:10px;
+   width:200px;
+   background-color:aqua;
+}
+h1{
+      border-top: 0cap;
+      border: 2px solid yellow;
+      text-align: center;
+       background-color: pink;
+       border-width: 20;
+}
+</style>
+<h1>Booking appointment App<h1>
+<form onsubmit="savetoLocalstorage(event)">
+<form ondelete="savetoLocalstorage(event)">
+
+ <label for="username">Name:</label>
+<input type="text"  name="username" required>
+<label for="email">E-mail:</label>
+<input type="text" id="email" name="email" required>
+<label for ='phone-number'>Mobile No:</label>
+<input type='tel'name="Mobile No" required><br><br>
+<input type="submit" value="Submit">
+<input type="button"value=Delete> 
+</form>
+<ul id="listofuser"></ul>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"></script>
+
+<script>
+    window.addEventListner('DomContentLoaded',()=>{
+axious.get("https://crudcrud.com/api/19d06f399ef542f39d1b0f0510977bd3/AppoinmentData/641bea0522534003e8c902e4")
+  .then((respone)=>{
+    console.log(response)
+  })
+   .catch((error)=>{
+    console.log(error)
+   })
+
+})
+function savetoLocalstorage(event) {
+const name=event.target.username.value;
+const Email=event.target.email.value;
+const phonenumber=event.target.phone-number.value;
+}
+</script>
+</body>
+</html>
